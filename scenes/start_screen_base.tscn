@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1qf7uu0pqrp"]
+
+[ext_resource type="Texture2D" uid="uid://bmnqtn6ur5qhu" path="res://sprites/background/WAVES Title Page.png" id="1_vjs1a"]
+[ext_resource type="Theme" uid="uid://csc7fi523g83d" path="res://resources/Button_Theme.tres" id="2_5v0hk"]
+
+[node name="Start_Screen_Base" type="Node2D"]
+
+[node name="Background_Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.899219, 0.898611)
+texture = ExtResource("1_vjs1a")
+centered = false
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 482.5
+offset_top = 478.0
+offset_right = 669.5
+offset_bottom = 574.0
+theme = ExtResource("2_5v0hk")
+
+[node name="Start_Button" type="Button" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_5v0hk")
+text = "START"

@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://csc7fi523g83d"]
+
+[ext_resource type="FontFile" uid="uid://cjy0ly2glmfd4" path="res://resources/VCR_OSD_MONO_1.001.ttf" id="1_rhqtc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtb1w"]
+bg_color = Color(0, 0.905882, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8pe7"]
+bg_color = Color(0, 0.647059, 0.913725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px1v7"]
+bg_color = Color(0.627451, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8177"]
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_rhqtc")
+Button/styles/hover = SubResource("StyleBoxFlat_dtb1w")
+Button/styles/normal = SubResource("StyleBoxFlat_p8pe7")
+Button/styles/pressed = SubResource("StyleBoxFlat_px1v7")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_o8177")
