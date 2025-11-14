@@ -1,0 +1,174 @@
+[gd_scene load_steps=3 format=3 uid="uid://6xhl7mv2nmqn"]
+
+[ext_resource type="SpriteFrames" uid="uid://7hks6oosa2wf" path="res://sprites/spriteframes/reference_images.tres" id="1_2xlsd"]
+[ext_resource type="Texture2D" uid="uid://cssoasqyx24ox" path="res://sprites/background/WAVES colour.png" id="2_72l33"]
+
+[node name="Wave_Test_Base" type="Node2D"]
+
+[node name="Reference_Images" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.898611)
+sprite_frames = ExtResource("1_2xlsd")
+animation = &"references"
+centered = false
+
+[node name="Wave_Elements" type="Node2D" parent="."]
+
+[node name="Wave_R1" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(580, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R2" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(608, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R3" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(636, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R4" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(664, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R5" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(692, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R6" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(720, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R7" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(748, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R8" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(776, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R9" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(804, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R10" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(832, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R11" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(860, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R12" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(888, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R13" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(916, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R14" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(944, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R15" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(972, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R16" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(1000, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R17" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(1028, 514)
+rotation = -3.14159
+scale = Vector2(0.0225887, 0.190039)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R18" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(1056, 514)
+rotation = -3.14159
+scale = Vector2(0.023, 0.25)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R19" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(1084, 514)
+rotation = -3.14159
+scale = Vector2(0.023, 0.22)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
+
+[node name="Wave_R20" type="Sprite2D" parent="Wave_Elements"]
+position = Vector2(1112, 514)
+rotation = -3.14159
+scale = Vector2(0.023, 0.19)
+texture = ExtResource("2_72l33")
+centered = false
+flip_v = true
