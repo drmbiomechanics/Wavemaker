@@ -341,9 +341,9 @@ centered = false
 flip_v = true
 
 [node name="Wave_R40" type="Sprite2D" parent="Wave_Elements"]
-position = Vector2(1112.35, 610.5)
+position = Vector2(1109.85, 610.5)
 rotation = -3.14159
-scale = Vector2(0.016, 0.411)
+scale = Vector2(0.0140447, 0.411)
 texture = ExtResource("2_72l33")
 centered = false
 flip_v = true
