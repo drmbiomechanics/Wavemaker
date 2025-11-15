@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c3pw0hnoa05jv"]
+
+[ext_resource type="Texture2D" uid="uid://coss4n5weabqm" path="res://sprites/characters/swimmer_v1_alpha.png" id="1_o5iry"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o5iry")
+}],
+"loop": true,
+"name": &"Swimmer_Type_1",
+"speed": 5.0
+}]
