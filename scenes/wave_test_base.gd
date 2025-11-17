@@ -26,7 +26,7 @@ var player_wavelength = 0.8
 var requested_wave_to_score = []
 var sc = 0
 var active_swimmer = 1
-
+var score_text = "Score = "
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,7 +89,10 @@ func _process(delta):
 			hide_score_bands(true)
 			#$Requested_Wave_Node/Requested_Wave_Line.position = Vector2(359,314.884)
 
-	
+func update_score():
+	var score_line = ""
+	score_line = score_text + str(score)
+	$Score_Container/Score_Label.text = score_line
 
 func hide_score_bands(condition: bool):
 	if condition == true:
@@ -207,6 +210,7 @@ func play_made_wave2(wave_index,x_index,amplitude,wavelength,decay):
 		$Requested_Wave_Node/Requested_Wave_200_lower.position.x = line_pos_x-4.0812
 		score += score_array[sc]
 		print(score)
+		update_score()
 		sc += 1
 	$Wave_Elements/Wave_R13.scale.y = ((wave_y*scale_slope)+scale_intercept)
 	wave_y = (amplitude*exp(decay*((wave_index[x_index+135])))*sin(2*PI*((wave_index[x_index+135]))/wavelength))
@@ -244,6 +248,7 @@ func play_made_wave2(wave_index,x_index,amplitude,wavelength,decay):
 		$Requested_Wave_Node/Requested_Wave_200_lower.position.x = line_pos_x-4.0812
 		score += score_array[sc]
 		print(score)
+		update_score()
 		sc += 1
 	$Wave_Elements/Wave_R20.scale.y = ((wave_y*scale_slope)+scale_intercept)
 	wave_y = (amplitude*exp(decay*((wave_index[x_index+100])))*sin(2*PI*((wave_index[x_index+100]))/wavelength))
@@ -278,6 +283,7 @@ func play_made_wave2(wave_index,x_index,amplitude,wavelength,decay):
 		$Requested_Wave_Node/Requested_Wave_200_lower.position.x = line_pos_x-4.0812
 		score += score_array[sc]
 		print(score)
+		update_score()
 		sc += 1
 	$Wave_Elements/Wave_R28.scale.y = ((wave_y*scale_slope)+scale_intercept)
 	wave_y = (amplitude*exp(decay*((wave_index[x_index+60])))*sin(2*PI*((wave_index[x_index+60]))/wavelength))
@@ -756,6 +762,7 @@ func _on_button_pressed():
 	hide_score_bands(false)
 	requested_wave_display_reversed(requested_wave)
 	sc = 0
+	score = 0
 	if active_swimmer == 1:
 		$Requested_Wave_Node/Requested_Wave_Line.position = Vector2(542.654+10.203,315)#Vector2($Swimmer_2.position.x,$Swimmer_2.position.y)
 		$Requested_Wave_Node/Requested_Wave_25_upper.position = Vector2($Swimmer_1.position.x+10.203,302.05)
