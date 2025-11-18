@@ -940,7 +940,7 @@ func _on_stop_button_pressed():
 
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
 
 
 func _on_sim_button_pressed():
@@ -948,4 +948,4 @@ func _on_sim_button_pressed():
 
 
 func _on_quit_button_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
