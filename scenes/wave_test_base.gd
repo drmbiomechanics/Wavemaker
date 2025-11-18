@@ -27,6 +27,12 @@ var requested_wave_to_score = []
 var sc = 0
 var active_swimmer = 1
 var score_text = "Score = "
+var max_jump_height = 30.80 # value might change if sprite size changes
+var min_jump_height = 200 # value might change if sprite size changes
+var floor_height = 305
+var jump_amp_slope = -0.0296 #this times character y position plus intercept gives amplitude # value might change if sprite size changes
+var jump_amp_intercept = 5.9102 # value might change if sprite size changes
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -61,6 +67,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	x_for_waves += x_step
+	#print($CharacterBody2D.position.y)
 	if wave_made == false:
 		test_sine_wave(x_for_waves,0.1)
 		#test_decay_wave(x_for_waves,5,1,-0.3)
