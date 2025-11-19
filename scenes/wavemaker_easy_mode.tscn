@@ -1042,54 +1042,69 @@ width = 5.0
 default_color = Color(0, 1, 0, 1)
 
 [node name="Requested_Wave_25_upper" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 302.05)
 width = 2.0
 default_color = Color(1, 1, 0, 1)
 
 [node name="Requested_Wave_25_lower" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 327.95)
 width = 2.0
 default_color = Color(1, 1, 0, 1)
 
 [node name="Requested_Wave_50_upper" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 289.1)
 width = 2.0
 default_color = Color(1, 0.486275, 0, 1)
 
 [node name="Requested_Wave_50_lower" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 340.9)
 width = 2.0
 default_color = Color(1, 0.486275, 0, 1)
 
 [node name="Requested_Wave_100_upper" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 263.2)
 width = 2.0
 default_color = Color(1, 0.486275, 0.839216, 1)
 
 [node name="Requested_Wave_100_lower" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 366.8)
 width = 2.0
 default_color = Color(1, 0.486275, 0.839216, 1)
 
 [node name="Requested_Wave_150_upper" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 237.3)
 width = 2.0
 default_color = Color(1, 0, 0.839216, 1)
 
 [node name="Requested_Wave_150_lower" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 392.7)
 width = 2.0
 default_color = Color(1, 0, 0.839216, 1)
 
 [node name="Requested_Wave_200_upper" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 211.4)
 width = 2.0
 default_color = Color(1, 0, 0, 1)
 
 [node name="Requested_Wave_200_lower" type="Line2D" parent="Requested_Wave_Node"]
+visible = false
 position = Vector2(359, 418.6)
 width = 2.0
 default_color = Color(1, 0, 0, 1)
+
+[node name="Wave_Projection_Line" type="Line2D" parent="Requested_Wave_Node"]
+position = Vector2(359, 314.884)
+width = 5.0
+default_color = Color(0, 0, 0, 0.784314)
 
 [node name="Background_Panel_Container" type="PanelContainer" parent="."]
 offset_left = 37.0
@@ -1119,7 +1134,7 @@ scale = Vector2(0.08, 0.08)
 sprite_frames = ExtResource("8_5dnti")
 animation = &"Swimmer_Type_1"
 centered = false
-offset = Vector2(-220, -415)
+offset = Vector2(-250, -485.794)
 
 [node name="Swimmer_3" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1143,6 +1158,21 @@ theme = ExtResource("7_xeku8")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 text = "Score: 0"
+vertical_alignment = 1
+
+[node name="Round_Container" type="PanelContainer" parent="."]
+offset_left = 959.0
+offset_top = 42.0
+offset_right = 1107.0
+offset_bottom = 82.0
+theme = ExtResource("7_xeku8")
+
+[node name="Round_Label" type="Label" parent="Round_Container"]
+layout_mode = 2
+theme = ExtResource("7_xeku8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Round: 0"
 vertical_alignment = 1
 
 [node name="WL_Container" type="PanelContainer" parent="."]
@@ -1184,11 +1214,11 @@ theme = ExtResource("7_xeku8")
 
 [node name="Score_Band_Toggle" type="Button" parent="Score_Band_Toggle_Container"]
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("7_xeku8")
 theme_override_font_sizes/font_size = 21
 toggle_mode = true
-button_pressed = true
-text = "Score Bands: On"
+text = "Score Bands: Off"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(159, 302)

@@ -1,0 +1,980 @@
+[gd_scene load_steps=12 format=3 uid="uid://btk50jnevijrc"]
+
+[ext_resource type="Script" path="res://scenes/score_screen.gd" id="1_sl4v4"]
+[ext_resource type="SpriteFrames" uid="uid://7hks6oosa2wf" path="res://sprites/spriteframes/reference_images.tres" id="2_r18pp"]
+[ext_resource type="Texture2D" uid="uid://duiggn0xunlbk" path="res://sprites/background/state possibilities for figures_smooth.png" id="3_fi2ij"]
+[ext_resource type="TileSet" uid="uid://ceslnnv7kwrox" path="res://resources/pool_tileset.tres" id="4_cxv7j"]
+[ext_resource type="Texture2D" uid="uid://c4bpaln7e7gt4" path="res://sprites/background/wavemakers_logo.png" id="5_4f64g"]
+[ext_resource type="Texture2D" uid="uid://cssoasqyx24ox" path="res://sprites/background/WAVES colour.png" id="6_thgx7"]
+[ext_resource type="Theme" uid="uid://csc7fi523g83d" path="res://resources/Button_Theme.tres" id="7_60v63"]
+[ext_resource type="SpriteFrames" uid="uid://c3pw0hnoa05jv" path="res://sprites/spriteframes/swimmers_spriteframe.tres" id="8_0wcn0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1yv8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ju0f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5g8b"]
+bg_color = Color(0.0588235, 0.709804, 0.694118, 0.784314)
+
+[node name="Wave_Test_Base" type="Node2D"]
+script = ExtResource("1_sl4v4")
+
+[node name="Reference_Images" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.898611)
+sprite_frames = ExtResource("2_r18pp")
+animation = &"references"
+frame = 2
+centered = false
+
+[node name="Sky_Sprite" type="Sprite2D" parent="."]
+position = Vector2(711, 277)
+scale = Vector2(0.694531, 0.775)
+texture = ExtResource("3_fi2ij")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-1, 18)
+tile_set = ExtResource("4_cxv7j")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 262144, 0, 0, 524288, 0, 0, 786432, 0, 0, 1048576, 0, 0, 65536, 65536, 0, 393216, 65536, 0, 720896, 65536, 0, 851968, 65536, 0, 131072, 131072, 0, 327680, 131072, 0, 589824, 131072, 0, 983040, 131072, 0, 196608, 196608, 0, 458752, 196608, 0, 655360, 196608, 0, 917504, 196608, 0, 1048577, 65536, 0, 1048580, 65536, 0, 1048582, 65536, 0, 1048584, 65536, 0, 1048585, 65536, 0, 1048589, 65536, 0, 1048592, 65536, 0, 1048594, 65536, 0, 1048598, 65536, 0, 1048605, 65536, 0, 1048607, 65536, 0, 1048578, 131072, 0, 1048581, 131072, 0, 1048587, 131072, 0, 1048591, 131072, 0, 1048593, 131072, 0, 1048596, 131072, 0, 1048601, 131072, 0, 1048602, 131072, 0, 1048606, 131072, 0, 1048579, 196608, 0, 1048583, 196608, 0, 1048586, 196608, 0, 1048588, 196608, 0, 1048590, 196608, 0, 1048595, 196608, 0, 1048597, 196608, 0, 1048599, 196608, 0, 1048600, 196608, 0, 1048603, 196608, 0, 1048604, 196608, 0, 524295, 196608, 0, 983070, 0, 0, 983071, 0, 0, 917534, 65536, 0, 917535, 65536, 0, 851998, 131072, 0, 851999, 131072, 0, 786462, 196608, 0, 786463, 196608, 0, 720926, 65536, 0, 720927, 65536, 0, 655390, 0, 0, 655391, 0, 0, 589854, 131072, 0, 589855, 131072, 0, 524318, 196608, 0, 524319, 196608, 0, 524294, 0, 0, 524293, 0, 0, 524292, 0, 0, 524291, 0, 0, 524290, 0, 0, 524289, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0)
+
+[node name="Pool_Background" type="Sprite2D" parent="."]
+position = Vector2(295, 315)
+scale = Vector2(0.636719, 0.409722)
+texture = ExtResource("5_4f64g")
+centered = false
+
+[node name="Wave_Elements" type="Node2D" parent="."]
+visible = false
+
+[node name="Wave_R1" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(314.844, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R2" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(335.25, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R3" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(355.7, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R4" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(376.15, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R5" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(396.6, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R6" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(417.05, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R7" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(437.5, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R8" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(457.95, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R9" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(478.4, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R10" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(498.85, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R11" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(519.3, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R12" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(539.75, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R13" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(560.2, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R14" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(580.65, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R15" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(601.1, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R16" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(621.55, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R17" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(642, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R18" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(662.45, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R19" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(682.9, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R20" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(703.35, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R21" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(723.8, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R22" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(744.25, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R23" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(764.7, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R24" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(785.15, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R25" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(805.6, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R26" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(826.05, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R27" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(846.5, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R28" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(866.95, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R29" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(887.4, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R30" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(907.85, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R31" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(928.3, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R32" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(948.75, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R33" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(969.2, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R34" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(989.65, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R35" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1010.1, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R36" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1030.55, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.1)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R37" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1051, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R38" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1071.45, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R39" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1091.9, 610.5)
+rotation = -3.14159
+scale = Vector2(0.016, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Wave_R40" type="Sprite2D" parent="Wave_Elements"]
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1109.85, 610.5)
+rotation = -3.14159
+scale = Vector2(0.0140447, 0.411)
+texture = ExtResource("6_thgx7")
+centered = false
+flip_v = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(391, 298)
+anchor_mode = 0
+zoom = Vector2(1.855, 1.855)
+
+[node name="Background_Panel_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 17.0
+offset_right = 295.0
+offset_bottom = 314.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1yv8")
+
+[node name="Button_Container" type="PanelContainer" parent="."]
+offset_left = 237.0
+offset_top = 270.0
+offset_right = 295.0
+offset_bottom = 314.0
+theme = ExtResource("7_60v63")
+
+[node name="Go_Button" type="Button" parent="Button_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "GO"
+
+[node name="Stop_Button_Container" type="PanelContainer" parent="."]
+offset_left = 37.0
+offset_top = 270.0
+offset_right = 153.0
+offset_bottom = 314.0
+theme = ExtResource("7_60v63")
+
+[node name="Stop_Button" type="Button" parent="Stop_Button_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "STOP"
+
+[node name="P_Amp_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 18.0
+offset_right = 295.063
+offset_bottom = 58.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="P_Amp_SpinBox" type="SpinBox" parent="P_Amp_SB_Container"]
+layout_mode = 2
+min_value = 0.1
+max_value = 5.0
+step = 0.1
+value = 5.0
+alignment = 1
+
+[node name="P_Wavelength_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 58.0
+offset_right = 295.063
+offset_bottom = 98.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="P_Wavelength_SpinBox" type="SpinBox" parent="P_Wavelength_SB_Container"]
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.25
+value = 0.75
+alignment = 1
+
+[node name="R_Amp_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 97.0
+offset_right = 295.063
+offset_bottom = 137.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="R_Amp_SpinBox" type="SpinBox" parent="R_Amp_SB_Container"]
+layout_mode = 2
+min_value = 0.1
+max_value = 5.0
+step = 0.1
+value = 5.0
+alignment = 1
+
+[node name="R_Wavelength_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 137.0
+offset_right = 295.063
+offset_bottom = 177.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="R_Wavelength_SpinBox" type="SpinBox" parent="R_Wavelength_SB_Container"]
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.25
+value = 0.75
+alignment = 1
+
+[node name="Decay_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 177.0
+offset_right = 295.063
+offset_bottom = 217.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="Decay_SpinBox" type="SpinBox" parent="Decay_SB_Container"]
+layout_mode = 2
+min_value = -1.0
+max_value = -0.5
+step = 0.1
+value = -0.5
+alignment = 1
+
+[node name="Active_Swimmer_SB_Container" type="PanelContainer" parent="."]
+offset_left = 212.0
+offset_top = 217.0
+offset_right = 295.063
+offset_bottom = 257.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="Active_Swimmer_SpinBox" type="SpinBox" parent="Active_Swimmer_SB_Container"]
+layout_mode = 2
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+alignment = 1
+
+[node name="P_Amp_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 18.0
+offset_right = 221.0
+offset_bottom = 58.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="P_Amplitude_Label" type="Label" parent="P_Amp_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Player Amplitude:"
+
+[node name="P_Wavelength_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 58.0
+offset_right = 221.0
+offset_bottom = 98.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="P_Wavelength_Label" type="Label" parent="P_Wavelength_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Player Wavelength:"
+
+[node name="R_Amp_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 97.0
+offset_right = 221.0
+offset_bottom = 137.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="R_Amplitude_Label" type="Label" parent="R_Amp_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Requested Amplitude:"
+
+[node name="R_Wavelength_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 137.0
+offset_right = 212.0
+offset_bottom = 177.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="R_Wavelength_Label" type="Label" parent="R_Wavelength_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Requested Wavelength:"
+
+[node name="Decay_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 177.0
+offset_right = 221.0
+offset_bottom = 217.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="Decay_Label" type="Label" parent="Decay_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Decay (experimental)"
+
+[node name="Active_Swimmer_Label_Container" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 217.0
+offset_right = 221.0
+offset_bottom = 257.0
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju0f")
+
+[node name="Active_Swimmer_Label" type="Label" parent="Active_Swimmer_Label_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "Active Swimmer"
+
+[node name="Swimmer_1" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(542.654, 538)
+scale = Vector2(0.08, 0.08)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(685.496, 538)
+scale = Vector2(0.08, 0.08)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(828.338, 538)
+scale = Vector2(0.08, 0.08)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Score_Container" type="PanelContainer" parent="."]
+offset_left = 430.0
+offset_top = 559.0
+offset_right = 578.0
+offset_bottom = 599.0
+theme = ExtResource("7_60v63")
+
+[node name="Score_Label" type="Label" parent="Score_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="Score_Band_Toggle_Container" type="PanelContainer" parent="."]
+visible = false
+offset_left = 764.0
+offset_top = 10.0
+offset_right = 957.0
+offset_bottom = 43.0
+theme = ExtResource("7_60v63")
+
+[node name="Score_Band_Toggle" type="Button" parent="Score_Band_Toggle_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_font_sizes/font_size = 21
+toggle_mode = true
+button_pressed = true
+text = "Score Bands: On"
+
+[node name="Start_Container" type="PanelContainer" parent="."]
+visible = false
+offset_left = 402.0
+offset_top = 299.0
+offset_right = 547.0
+offset_bottom = 358.0
+theme = ExtResource("7_60v63")
+
+[node name="Start_Button" type="Button" parent="Start_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "START"
+
+[node name="Sim_Container" type="PanelContainer" parent="."]
+visible = false
+offset_left = 629.0
+offset_top = 299.0
+offset_right = 774.0
+offset_bottom = 358.0
+theme = ExtResource("7_60v63")
+
+[node name="Sim_Button" type="Button" parent="Sim_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_font_sizes/font_size = 24
+text = "SIMULATION
+MODE"
+
+[node name="Quit_Container" type="PanelContainer" parent="."]
+visible = false
+offset_left = 856.0
+offset_top = 299.0
+offset_right = 1001.0
+offset_bottom = 358.0
+theme = ExtResource("7_60v63")
+
+[node name="Quit_Button" type="Button" parent="Quit_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+text = "QUIT"
+
+[node name="Rank_Container" type="VBoxContainer" parent="."]
+offset_left = 429.0
+offset_top = 315.0
+offset_right = 978.0
+offset_bottom = 609.0
+
+[node name="Title_Container" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Title_Label" type="Label" parent="Rank_Container/Title_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Rankings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container1" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_1_Label" type="Label" parent="Rank_Container/Rank_Container1"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "5900:Wavemaster"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container2" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_2_Label" type="Label" parent="Rank_Container/Rank_Container2"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "5000:Pro Wavemaker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container3" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_3_Label" type="Label" parent="Rank_Container/Rank_Container3"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "3500:Competent Wavemaker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container4" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_4_Label" type="Label" parent="Rank_Container/Rank_Container4"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "1500:Apprentice Wavemaker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container5" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_5_Label" type="Label" parent="Rank_Container/Rank_Container5"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "600:Junior Canonballer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank_Container6" type="PanelContainer" parent="Rank_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
+
+[node name="Rank_6_Label" type="Label" parent="Rank_Container/Rank_Container6"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "<600: Puddle Splasher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Again_Container" type="PanelContainer" parent="."]
+offset_left = 614.0
+offset_top = 564.0
+offset_right = 654.0
+offset_bottom = 604.0
+theme = ExtResource("7_60v63")
+
+[node name="Play_Again_Button" type="Button" parent="Play_Again_Container"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_font_sizes/font_size = 30
+text = "Play Again"
+
+[node name="Quit_Container2" type="PanelContainer" parent="."]
+offset_left = 906.0
+offset_top = 564.0
+offset_right = 978.0
+offset_bottom = 604.0
+theme = ExtResource("7_60v63")
+
+[node name="Quit_Button" type="Button" parent="Quit_Container2"]
+layout_mode = 2
+theme = ExtResource("7_60v63")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Requested_Wave_Node" type="Node2D" parent="."]
+
+[node name="Swimmer_Rank_1_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(497, 543)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 4
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_1_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(900, 543)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 4
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_2_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(484, 513)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_2_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(910, 513)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_3_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(457, 475)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 3
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_3_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(938, 475)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 3
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_4_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(465, 446)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 1
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_4_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(926, 446)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 1
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_5_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(520, 408)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 2
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_5_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(871, 408)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 2
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_6_Left" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(549, 372)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 5
+centered = false
+offset = Vector2(-220, -415)
+
+[node name="Swimmer_Rank_6_Right" type="AnimatedSprite2D" parent="Requested_Wave_Node"]
+visible = false
+position = Vector2(843, 372)
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("8_0wcn0")
+animation = &"Swimmer_Type_1"
+frame = 5
+centered = false
+offset = Vector2(-220, -415)
+
+[connection signal="pressed" from="Button_Container/Go_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Stop_Button_Container/Stop_Button" to="." method="_on_stop_button_pressed"]
+[connection signal="value_changed" from="P_Amp_SB_Container/P_Amp_SpinBox" to="." method="_on_p_amp_spin_box_value_changed"]
+[connection signal="value_changed" from="P_Wavelength_SB_Container/P_Wavelength_SpinBox" to="." method="_on_p_wavelength_spin_box_value_changed"]
+[connection signal="value_changed" from="R_Amp_SB_Container/R_Amp_SpinBox" to="." method="_on_r_amp_spin_box_value_changed"]
+[connection signal="value_changed" from="R_Wavelength_SB_Container/R_Wavelength_SpinBox" to="." method="_on_r_wavelength_spin_box_value_changed"]
+[connection signal="value_changed" from="Decay_SB_Container/Decay_SpinBox" to="." method="_on_decay_spin_box_value_changed"]
+[connection signal="value_changed" from="Active_Swimmer_SB_Container/Active_Swimmer_SpinBox" to="." method="_on_active_swimmer_spin_box_value_changed"]
+[connection signal="toggled" from="Score_Band_Toggle_Container/Score_Band_Toggle" to="." method="_on_score_band_toggle_toggled"]
+[connection signal="pressed" from="Start_Container/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Sim_Container/Sim_Button" to="." method="_on_sim_button_pressed"]
+[connection signal="pressed" from="Quit_Container/Quit_Button" to="." method="_on_quit_button_pressed"]

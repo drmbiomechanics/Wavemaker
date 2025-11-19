@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 60#150.0
 const JUMP_VELOCITY =-512 #-725 at regular grav
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -30,10 +30,10 @@ func _physics_process(delta):
 		if ground_pound == false:
 			wave_triggered = false# this somewhat helped, but not triggering again?
 			#gravity = (ProjectSettings.get_setting("physics/2d/default_gravity"))/2
-			y_to_amp = (roundf(((position.y)*-0.0277+6.918)*100))/100
+			y_to_amp = (roundf(((position.y)*-0.0277+6.918)*10))/10
 			if y_to_amp < 0:
 				y_to_amp = 0
-			x_to_wl = (roundf(((position.x-46.074)*0.0222-0.5221)*100))/100
+			x_to_wl = (roundf(((position.x)*0.0222-0.5221)*10))/10
 			if not is_on_floor():
 				velocity.y += gravity * delta
 				if Input.is_action_just_pressed("ui_accept"):
@@ -41,8 +41,8 @@ func _physics_process(delta):
 					velocity.y = 0
 					velocity.y += (gravity*50) * delta
 					if wave_triggered == false:
-						amplitude_out = (roundf(((position.y)*-0.0277+6.918)*100))/100
-						wavelength_out = (roundf(((position.x-46.074)*0.0222-0.5221)*100))/100
+						amplitude_out = (roundf(((position.y)*-0.0277+6.918)*10))/10
+						wavelength_out = (roundf(((position.x)*0.0222-0.5221)*10))/10
 					print(amplitude_out)
 		#			print(wavelength_out)
 		#			print(gravity)
