@@ -1206,9 +1206,9 @@ text = "Amplitude: 0"
 vertical_alignment = 1
 
 [node name="Score_Band_Toggle_Container" type="PanelContainer" parent="."]
-offset_left = 764.0
+offset_left = 757.0
 offset_top = 10.0
-offset_right = 957.0
+offset_right = 953.0
 offset_bottom = 43.0
 theme = ExtResource("7_xeku8")
 
@@ -1249,6 +1249,32 @@ position = Vector2(260, 216)
 [node name="Right_Wall_CollisionShape2D" type="CollisionShape2D" parent="Right_Wall_StaticBody2D3"]
 shape = SubResource("SegmentShape2D_27pct")
 
+[node name="Quit_Container" type="PanelContainer" parent="."]
+offset_left = 671.0
+offset_top = 10.0
+offset_right = 723.0
+offset_bottom = 43.0
+theme = ExtResource("7_xeku8")
+
+[node name="Quit_Button" type="Button" parent="Quit_Container"]
+layout_mode = 2
+theme = ExtResource("7_xeku8")
+theme_override_font_sizes/font_size = 21
+text = "Quit"
+
+[node name="Menu_Container" type="PanelContainer" parent="."]
+offset_left = 585.0
+offset_top = 10.0
+offset_right = 637.0
+offset_bottom = 43.0
+theme = ExtResource("7_xeku8")
+
+[node name="Menu_Button" type="Button" parent="Menu_Container"]
+layout_mode = 2
+theme = ExtResource("7_xeku8")
+theme_override_font_sizes/font_size = 21
+text = "Menu"
+
 [connection signal="pressed" from="Button_Container/Go_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stop_Button_Container/Stop_Button" to="." method="_on_stop_button_pressed"]
 [connection signal="value_changed" from="P_Amp_SB_Container/P_Amp_SpinBox" to="." method="_on_p_amp_spin_box_value_changed"]
@@ -1259,3 +1285,5 @@ shape = SubResource("SegmentShape2D_27pct")
 [connection signal="value_changed" from="Active_Swimmer_SB_Container/Active_Swimmer_SpinBox" to="." method="_on_active_swimmer_spin_box_value_changed"]
 [connection signal="toggled" from="Score_Band_Toggle_Container/Score_Band_Toggle" to="." method="_on_score_band_toggle_toggled"]
 [connection signal="wave_is_triggered" from="CharacterBody2D" to="." method="_on_character_body_2d_wave_is_triggered"]
+[connection signal="pressed" from="Quit_Container/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Menu_Container/Menu_Button" to="." method="_on_menu_button_pressed"]

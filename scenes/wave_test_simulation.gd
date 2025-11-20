@@ -1018,3 +1018,13 @@ func convey_player_action(condition: bool):
 		return(wave_anim)
 
 
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
+	
+
+
+
+func _on_menu_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/animated_title.tscn")

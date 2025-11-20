@@ -417,10 +417,10 @@ offset_bottom = 314.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j1yv8")
 
 [node name="Button_Container" type="PanelContainer" parent="."]
-offset_left = 237.0
+offset_left = 233.0
 offset_top = 270.0
 offset_right = 295.0
-offset_bottom = 314.0
+offset_bottom = 318.0
 theme = ExtResource("7_ucrnu")
 
 [node name="Go_Button" type="Button" parent="Button_Container"]
@@ -1124,6 +1124,33 @@ toggle_mode = true
 button_pressed = true
 text = "Score Bands: On"
 
+[node name="Quit_Container" type="PanelContainer" parent="."]
+offset_left = 671.0
+offset_top = 10.0
+offset_right = 723.0
+offset_bottom = 43.0
+theme = ExtResource("7_ucrnu")
+
+[node name="Quit_Button" type="Button" parent="Quit_Container"]
+layout_mode = 2
+theme = ExtResource("7_ucrnu")
+theme_override_font_sizes/font_size = 21
+text = "Quit"
+
+[node name="Menu_Container" type="PanelContainer" parent="."]
+offset_left = 585.0
+offset_top = 10.0
+offset_right = 637.0
+offset_bottom = 43.0
+theme = ExtResource("7_ucrnu")
+
+[node name="Menu_Button" type="Button" parent="Menu_Container"]
+layout_mode = 2
+theme = ExtResource("7_ucrnu")
+theme_override_font_sizes/font_size = 21
+text = "Menu
+"
+
 [connection signal="pressed" from="Button_Container/Go_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stop_Button_Container/Stop_Button" to="." method="_on_stop_button_pressed"]
 [connection signal="value_changed" from="P_Amp_SB_Container/P_Amp_SpinBox" to="." method="_on_p_amp_spin_box_value_changed"]
@@ -1133,3 +1160,5 @@ text = "Score Bands: On"
 [connection signal="value_changed" from="Decay_SB_Container/Decay_SpinBox" to="." method="_on_decay_spin_box_value_changed"]
 [connection signal="value_changed" from="Active_Swimmer_SB_Container/Active_Swimmer_SpinBox" to="." method="_on_active_swimmer_spin_box_value_changed"]
 [connection signal="toggled" from="Score_Band_Toggle_Container/Score_Band_Toggle" to="." method="_on_score_band_toggle_toggled"]
+[connection signal="pressed" from="Quit_Container/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Menu_Container/Menu_Button" to="." method="_on_menu_button_pressed"]

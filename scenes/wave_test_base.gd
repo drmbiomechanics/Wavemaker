@@ -1307,3 +1307,13 @@ func _on_character_body_2d_wave_is_triggered(condition):
 #	await get_tree().create_timer(2).timeout
 #	wave_made = false
 #	x_for_waves = 0
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
+
+
+func _on_menu_button_pressed():
+	GlobalVariables.game_score = 0
+	GlobalVariables.round = 1
+	get_tree().change_scene_to_file("res://scenes/animated_title.tscn")
