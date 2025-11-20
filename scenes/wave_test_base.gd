@@ -135,7 +135,7 @@ func _process(delta):
 			round +=1
 			if round == 7:
 				GlobalVariables.game_score = score
-				get_tree().change_scene_to_file("res://scenes/animated_title.tscn")
+				get_tree().change_scene_to_file("res://scenes/score_screen.tscn")
 			else:
 				GlobalVariables.round = round
 				swimmer_sprite = GlobalVariables.swimmer_index[round-1]
@@ -1233,6 +1233,7 @@ func _on_stop_button_pressed():
 func _on_character_body_2d_wave_is_triggered(condition):
 	var wave = []
 	var wave_anim = []
+	score_array = []
 	player_amplitude = $CharacterBody2D.amplitude_out
 	player_wavelength = $CharacterBody2D.wavelength_out
 	print(player_amplitude)
@@ -1282,6 +1283,10 @@ func _on_character_body_2d_wave_is_triggered(condition):
 		$Requested_Wave_Node/Requested_Wave_150_lower.position = Vector2($Swimmer_3.position.x+14.203,392.7)
 		$Requested_Wave_Node/Requested_Wave_200_lower.position = Vector2($Swimmer_3.position.x+14.203,418.6)
 	requested_wave_to_score = make_wave(test_amplitude,test_wavelength,decay,x_resolution,time)
+	print("requested amp")
+	print(test_amplitude)
+	print("requested wavelength")
+	print(test_wavelength)
 	player_wave = make_wave(player_amplitude,player_wavelength,decay,x_resolution,time)
 	print(player_wave)
 	print(requested_wave_to_score)

@@ -32,6 +32,7 @@ var score_text = "Score = "
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	clear_line_2d()
+	AudioPlayer.play_music_level()
 	#set_line2d(Vector2(0,0))
 	requested_wave = make_wave(test_amplitude,test_wavelength,decay,x_resolution,time)
 	#print(requested_wave)

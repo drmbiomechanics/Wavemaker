@@ -743,7 +743,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 
 [node name="Rank_1_Label" type="Label" parent="Rank_Container/Rank_Container1"]
 layout_mode = 2
-theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "5900:Wavemaster"
@@ -771,7 +770,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 
 [node name="Rank_3_Label" type="Label" parent="Rank_Container/Rank_Container3"]
 layout_mode = 2
-theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "3500:Competent Wavemaker"
@@ -813,7 +811,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 
 [node name="Rank_6_Label" type="Label" parent="Rank_Container/Rank_Container6"]
 layout_mode = 2
-theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "<600: Puddle Splasher"
@@ -978,3 +975,5 @@ offset = Vector2(-220, -415)
 [connection signal="pressed" from="Start_Container/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Sim_Container/Sim_Button" to="." method="_on_sim_button_pressed"]
 [connection signal="pressed" from="Quit_Container/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Play_Again_Container/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="Quit_Container2/Quit_Button" to="." method="_on_quit_button_pressed"]
