@@ -745,7 +745,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "5900:Wavemaster"
+text = "5000:Wavemaster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -759,7 +759,7 @@ layout_mode = 2
 theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "5000:Pro Wavemaker"
+text = "4000:Pro Wavemaker"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -772,7 +772,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "3500:Competent Wavemaker"
+text = "3000:Competent Wavemaker"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -786,7 +786,7 @@ layout_mode = 2
 theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "1500:Apprentice Wavemaker"
+text = "2000:Apprentice Wavemaker"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -800,7 +800,7 @@ layout_mode = 2
 theme = ExtResource("7_60v63")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "600:Junior Canonballer"
+text = "1000:Junior Canonballer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -813,7 +813,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q5g8b")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "<600: Puddle Splasher"
+text = "<1000: Puddle Splasher"
 horizontal_alignment = 1
 vertical_alignment = 1
 
