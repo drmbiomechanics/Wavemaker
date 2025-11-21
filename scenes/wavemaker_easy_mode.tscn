@@ -1389,7 +1389,7 @@ scale = Vector2(0.569091, 0.570909)
 sprite_frames = SubResource("SpriteFrames_x2pvm")
 animation = &"off"
 autoplay = "off"
-frame_progress = 0.660326
+frame_progress = 0.671454
 centered = false
 
 [node name="Amp_Container" type="PanelContainer" parent="."]
