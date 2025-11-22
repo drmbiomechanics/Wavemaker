@@ -49,7 +49,10 @@ func update_score():
 func _on_play_again_button_pressed():
 	GlobalVariables.game_score = 0
 	GlobalVariables.round = 1
-	get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
+	if GlobalVariables.game_mode == 0:
+		get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/wavemaker_hard_mode.tscn")
 	
 
 

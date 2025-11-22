@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const level_music = preload("res://audio/wavemaker_trance_1.wav")
+const level_music = preload("res://audio/wavemaker_trance_1_test_refine.wav")
 
 func _play_music(music: AudioStream, volume = -10):
 	if stream == music:

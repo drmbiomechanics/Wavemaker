@@ -53,7 +53,7 @@ func _ready():
 	clear_player_line2d()
 	update_round()
 	var player_wave_initial = make_wave(0,0.8,decay,x_resolution,time)
-	player_wave_display_initial(player_wave_initial)
+	#player_wave_display_initial(player_wave_initial)
 	#set_line2d(Vector2(0,0))
 	round = GlobalVariables.round
 	swimmer_sprite = GlobalVariables.swimmer_index[round-1]
@@ -100,7 +100,7 @@ func _process(delta):
 	update_displays()
 	player_wave_to_display = make_wave($CharacterBody2D.y_to_amp,$CharacterBody2D.x_to_wl,decay,x_resolution,time)
 	#player_wave_to_display.reverse()
-	player_wave_display_update(player_wave_to_display)
+	#player_wave_display_update(player_wave_to_display)
 	if wave_made == false:
 		test_sine_wave(x_for_waves,0.1)
 		#test_decay_wave(x_for_waves,5,1,-0.3)
@@ -1326,10 +1326,50 @@ func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/animated_title.tscn")
 	
 func round_start_displays():
-	var sb_line_1 = "Give me a wave with Excitment "
-	var sb_line_2 = ", and Vibes of "
-	var sb_line_3 = ". Something like this..."
-	sb_text = sb_line_1 + str(test_amplitude) + sb_line_2 + str(test_wavelength) + sb_line_3
+	var sb_line_1 = "Give me a wave with "
+	var sb_line_2 = " Excitment, and with "
+	var sb_line_3 = " Vibes. Something like this..."
+	var ex_adj = ""
+	var v_adj = ""
+	if test_amplitude <= 1:
+		ex_adj = "Pint-Sized"
+	elif test_amplitude <= 1.5:
+		ex_adj = "Junior-ish"
+	elif test_amplitude <= 2:
+		ex_adj = "Junior"
+	elif test_amplitude <= 2.5:
+		ex_adj = "Mondo-ish"
+	elif test_amplitude <= 3:
+		ex_adj = "Mondo"
+	elif test_amplitude <= 3.5:
+		ex_adj = "Massive-ish"
+	elif test_amplitude <= 4:
+		ex_adj = "Massive"
+	elif test_amplitude <= 4.5:
+		ex_adj = "Gnarly-ish"
+	elif test_amplitude <= 5:
+		ex_adj = "Gnarly"
+	if test_wavelength <= 0.75:
+		v_adj = "Jagged"
+	elif test_wavelength <= 1:
+		v_adj = "Bouncy"
+	elif test_wavelength <= 1.5:
+		v_adj = "Seesaw-ish"
+	elif test_wavelength <= 2:
+		v_adj = "Seesaw"
+	elif test_wavelength <= 2.5:
+		v_adj = "Round-ish"
+	elif test_wavelength <= 3:
+		v_adj = "Round"
+	elif test_wavelength <= 3.5:
+		v_adj = "Buttery-ish"
+	elif test_wavelength <= 4:
+		v_adj = "Buttery"
+	elif test_wavelength <= 4.5:
+		v_adj = "Silky-ish"
+	elif test_wavelength <= 5:
+		v_adj = "Silky-smooth"
+	sb_text = sb_line_1 + ex_adj + sb_line_2 + v_adj + sb_line_3
 	$SB_Container/SB_Label.text = sb_text
 	$Round_Box_Container.show()
 	await get_tree().create_timer(2).timeout

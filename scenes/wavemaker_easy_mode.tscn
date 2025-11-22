@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://vmu4oth5xakj"]
+[gd_scene load_steps=34 format=3 uid="uid://vmu4oth5xakj"]
 
 [ext_resource type="Script" path="res://scripts/wave_test_base.gd" id="1_22fpw"]
 [ext_resource type="SpriteFrames" uid="uid://7hks6oosa2wf" path="res://sprites/spriteframes/reference_images.tres" id="2_8n3xv"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://baqu6ey5twrv8" path="res://sprites/characters/animation/wavemachine_on_2_alpha.PNG" id="19_gkarq"]
 [ext_resource type="Texture2D" uid="uid://cbrlekx3ts51k" path="res://sprites/characters/animation/wavemachine_on_3_alpha.PNG" id="20_l044p"]
 [ext_resource type="Texture2D" uid="uid://c5ljhnpu65iab" path="res://sprites/characters/animation/wavemachine_on_4_alpha.PNG" id="21_jsiis"]
+[ext_resource type="AudioStream" uid="uid://cmcbo1tbuank6" path="res://audio/plate_wave_pan_2.wav" id="22_tnbt7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ju0f"]
 bg_color = Color(0, 0, 0, 1)
@@ -496,6 +497,7 @@ anchor_mode = 0
 zoom = Vector2(1.04, 1.04)
 
 [node name="Button_Container" type="PanelContainer" parent="."]
+visible = false
 offset_left = 214.0
 offset_top = 357.0
 offset_right = 272.0
@@ -508,6 +510,7 @@ theme = ExtResource("7_xeku8")
 text = "GO"
 
 [node name="Stop_Button_Container" type="PanelContainer" parent="."]
+visible = false
 offset_left = 43.0
 offset_top = 360.0
 offset_right = 159.0
@@ -1319,9 +1322,9 @@ theme_override_font_sizes/font_size = 21
 text = "Quit"
 
 [node name="Menu_Container" type="PanelContainer" parent="."]
-offset_left = 585.0
+offset_left = 548.0
 offset_top = 10.0
-offset_right = 637.0
+offset_right = 636.0
 offset_bottom = 43.0
 theme = ExtResource("7_xeku8")
 
@@ -1329,7 +1332,7 @@ theme = ExtResource("7_xeku8")
 layout_mode = 2
 theme = ExtResource("7_xeku8")
 theme_override_font_sizes/font_size = 21
-text = "Menu"
+text = "To Menu"
 
 [node name="Round_Box_Container" type="PanelContainer" parent="."]
 visible = false
@@ -1423,6 +1426,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Wavelength: 0"
 vertical_alignment = 1
+
+[node name="Wave_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_tnbt7")
+volume_db = 6.0
 
 [connection signal="pressed" from="Button_Container/Go_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stop_Button_Container/Stop_Button" to="." method="_on_stop_button_pressed"]

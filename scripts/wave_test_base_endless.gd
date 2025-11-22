@@ -40,7 +40,7 @@ var req_amp_upper = 2
 var req_amp_lower = 1
 var req_wl_upper = 1
 var req_wl_lower = 0.5
-var round = 0
+var round = 1
 var swimmer_sprite = 0
 var player_wave_to_display = []
 var sb_text = "Give me a wave with Excitment 5.5, and Vibes of 0.8. Something like this... "
@@ -56,13 +56,13 @@ func _ready():
 	player_wave_display_initial(player_wave_initial)
 	#set_line2d(Vector2(0,0))
 	round = GlobalVariables.round
-	swimmer_sprite = GlobalVariables.swimmer_index[round-1]
-	req_amp_upper = GlobalVariables.swimmer_amp_req_upper[round-1]
-	req_amp_lower =GlobalVariables.swimmer_amp_req_lower[round-1]
-	req_wl_upper = GlobalVariables.swimmer_wl_req_upper[round-1]
-	req_wl_lower = GlobalVariables.swimmer_wl_req_lower[round-1]
-	test_amplitude = (roundf((randf_range(req_amp_lower,req_amp_upper))*10))/10
-	test_wavelength = (roundf((randf_range(req_wl_lower,req_wl_upper))*10))/10
+	swimmer_sprite = GlobalVariables.swimmer_index[randi_range(0,5)]
+#	req_amp_upper = GlobalVariables.swimmer_amp_req_upper[round-1]
+#	req_amp_lower =GlobalVariables.swimmer_amp_req_lower[round-1]
+#	req_wl_upper = GlobalVariables.swimmer_wl_req_upper[round-1]
+#	req_wl_lower = GlobalVariables.swimmer_wl_req_lower[round-1]
+	test_amplitude = (roundf((randf_range(1.0,5.0))*10))/10
+	test_wavelength = (roundf((randf_range(0.5,5.0))*10))/10
 	round_start_displays()
 	print(test_amplitude)
 	print(test_wavelength)
@@ -135,25 +135,16 @@ func _process(delta):
 			wave_made = false
 			wave_computed = false
 			round +=1
-			if round == 7:
-				GlobalVariables.game_score = score
-				get_tree().change_scene_to_file("res://scenes/score_screen.tscn")
-			else:
-				GlobalVariables.round = round
-				swimmer_sprite = GlobalVariables.swimmer_index[round-1]
-				req_amp_upper = GlobalVariables.swimmer_amp_req_upper[round-1]
-				req_amp_lower =GlobalVariables.swimmer_amp_req_lower[round-1]
-				req_wl_upper = GlobalVariables.swimmer_wl_req_upper[round-1]
-				req_wl_lower = GlobalVariables.swimmer_wl_req_lower[round-1]
-				test_amplitude = (roundf((randf_range(req_amp_lower,req_amp_upper))*10))/10
-				test_wavelength = (roundf((randf_range(req_wl_lower,req_wl_upper))*10))/10
-				round_start_displays()
-				print(test_amplitude)
-				print(test_wavelength)
-				requested_wave = make_wave(test_amplitude,test_wavelength,decay,x_resolution,time)
-				update_round()
-				$Swimmer_2.frame = swimmer_sprite
-				$Wavemachine.play("off")
+			swimmer_sprite = GlobalVariables.swimmer_index[randi_range(0,5)]
+			test_amplitude = (roundf((randf_range(1.0,5.0))*10))/10
+			test_wavelength = (roundf((randf_range(0.5,5.0))*10))/10
+			round_start_displays()
+			print(test_amplitude)
+			print(test_wavelength)
+			requested_wave = make_wave(test_amplitude,test_wavelength,decay,x_resolution,time)
+			update_round()
+			$Swimmer_2.frame = swimmer_sprite
+			$Wavemachine.play("off")
 			disable_buttons(false)
 			$Requested_Wave_Node/Wave_Projection_Line.show()
 			$Requested_Wave_Node/Requested_Wave_Line.position = Vector2(295,314.884)
@@ -179,7 +170,7 @@ func update_score():
 	
 func update_round():
 	var round_line = ""
-	round_line = round_text +str(GlobalVariables.round)
+	round_line = round_text +str(round)
 	$Round_Container/Round_Label.text = round_line
 	$Round_Box_Container/Round_Box_Label.text = round_line
 	
@@ -1324,7 +1315,7 @@ func _on_menu_button_pressed():
 	GlobalVariables.game_score = 0
 	GlobalVariables.round = 1
 	get_tree().change_scene_to_file("res://scenes/animated_title.tscn")
-	
+
 func round_start_displays():
 	var sb_line_1 = "Give me a wave with Excitment "
 	var sb_line_2 = ", and Vibes of "

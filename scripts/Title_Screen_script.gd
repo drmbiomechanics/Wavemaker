@@ -27,7 +27,10 @@ var requested_wave_to_score = []
 var sc = 0
 var active_swimmer = 1
 var score_text = "Score = "
-
+var easy_description = "An easy mode with specific wave specifications provided and all assists on"
+var hard_description = "A harder mode where wave specifications are presented as vague descriptions of Excitment and Vibe, with some assists off"
+var endless_description = "An endless mode with no round or score limit, with random swimmers and random wave requests; all assists on"
+var base_description = "Select a difficulty or game mode!"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -941,7 +944,8 @@ func _on_stop_button_pressed():
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
+	display_modes()
+	#get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
 
 
 func _on_sim_button_pressed():
@@ -954,3 +958,78 @@ func _on_quit_button_pressed():
 
 func _on_tutorial_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/tutorial_base.tscn")
+
+
+
+func _on_easy_button_pressed():
+	GlobalVariables.game_mode = 0
+	get_tree().change_scene_to_file("res://scenes/wavemaker_easy_mode.tscn")
+
+
+
+func _on_hard_button_pressed():
+	GlobalVariables.game_mode = 1
+	get_tree().change_scene_to_file("res://scenes/wavemaker_hard_mode.tscn")
+
+
+func _on_endless_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/wavemaker_endless_mode.tscn")
+
+
+func _on_easy_button_mouse_entered():
+	$Description_Container/Description_Label.text = easy_description
+
+
+func _on_hard_button_mouse_entered():
+	$Description_Container/Description_Label.text = hard_description
+
+
+func _on_endless_button_mouse_entered():
+	$Description_Container/Description_Label.text = endless_description
+
+
+func _on_easy_button_mouse_exited():
+	$Description_Container/Description_Label.text = base_description
+
+
+
+func _on_hard_button_mouse_exited():
+	$Description_Container/Description_Label.text = base_description
+
+
+func _on_endless_button_mouse_exited():
+	$Description_Container/Description_Label.text = base_description
+	
+func display_modes():
+	$Easy_Container.show()
+	$Hard_Container.show()
+	$Endless_Container.show()
+	$Back_Container.show()
+	$Description_Container.show()
+	$Start_Container/Start_Button.disabled = true
+	$Sim_Container/Sim_Button.disabled = true
+	$Tutorial_Container/Tutorial_Button.disabled = true
+	$Quit_Container/Quit_Button.disabled = true
+
+
+
+func _on_back_button_pressed():
+	$Easy_Container.hide()
+	$Hard_Container.hide()
+	$Endless_Container.hide()
+	$Back_Container.hide()
+	$Description_Container.hide()
+	$Start_Container/Start_Button.disabled = false
+	$Sim_Container/Sim_Button.disabled = false
+	$Tutorial_Container/Tutorial_Button.disabled = false
+	$Quit_Container/Quit_Button.disabled = false
+	
+
+
+
+func _on_back_button_mouse_entered():
+	$Description_Container/Description_Label.text = "Return to top menu options"
+
+
+func _on_back_button_mouse_exited():
+	$Description_Container/Description_Label.text = base_description
